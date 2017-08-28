@@ -8,3 +8,5 @@ out/
 dist/
 node_modules/
 coverage/
+package-lock.json
+work.js

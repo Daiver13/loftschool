@@ -49,6 +49,28 @@ function random(max, min = 1) {
  * @param {Element} target
  */
 function addListeners(target) {
+    target.addEventListener('mousedown', (e) => {
+
+        function move(e) {
+            target.style.left = e.pageX - shiftX + 'px';
+            target.style.top = e.pageY - shiftY + 'px';
+        }
+
+        let shiftX = e.pageX - target.getBoundingClientRect().left + pageXOffset;
+        let shiftY = e.pageY - target.getBoundingClientRect().top + pageYOffset;
+
+        document.addEventListener('mousemove', move);
+
+        target.addEventListener('mouseup', () => {
+            document.removeEventListener('mousemove', move);
+        })
+    });
+    target.addEventListener('mouseover', () => {
+        target.style.boxShadow = '0 0 10px rgba(0,0,0,.4)';
+    });
+    target.addEventListener('mouseout', () => {
+        target.style.boxShadow = 'none';
+    });
 }
 
 let addDivButton = homeworkContainer.querySelector('#addDiv');

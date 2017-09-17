@@ -78,11 +78,36 @@ let loadingBlock = homeworkContainer.querySelector('#loading-block');
 let filterBlock = homeworkContainer.querySelector('#filter-block');
 let filterInput = homeworkContainer.querySelector('#filter-input');
 let filterResult = homeworkContainer.querySelector('#filter-result');
-let townsPromise;
+let townsPromise = loadTowns();
 
-filterInput.addEventListener('keyup', function() {
+let reloadButton = document.createElement('button');
+reloadButton.textContent = 'Повторить';
 
+reloadButton.addEventListener('click', () => {
+    showTowns(loadTowns());
 });
+homeworkContainer.appendChild(reloadButton);
+
+function showTowns(Promise) {
+    townsPromise.then(
+        (towns) => {
+            filterInput.addEventListener('keyup', function () {
+                let matchingTowns = towns.filter((town) => isMatching(town.name, this.value));
+
+                filterResult.innerHTML = '';
+                if (this.value) {
+                    matchingTowns.forEach((town) => {
+                        filterResult.innerHTML += town.name + '<br>';
+                    })
+                }
+            })
+        },
+        () => {
+            loadingBlock.textContent = 'Не удалось загрузить города';
+        })
+}
+
+showTowns(townsPromise);
 
 export {
     loadTowns,

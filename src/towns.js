@@ -68,9 +68,6 @@ function loadTowns() {
  * @return {boolean}
  */
 function isMatching(full, chunk) {
-	console.log('full', full);
-	console.log('chunk', chunk);
-
 	return full.toLowerCase().indexOf(chunk.toLowerCase()) !== -1;
 }
 
@@ -91,6 +88,9 @@ homeworkContainer.appendChild(reloadButton);
 function showTowns(Promise) {
     townsPromise.then(
         (towns) => {
+        	loadingBlock.textContent = '';
+            reloadButton.style.display = 'none';
+            filterBlock.style.display = 'block';
             filterInput.addEventListener('keyup', function () {
                 let matchingTowns = towns.filter((town) => isMatching(town.name, this.value));
 
@@ -103,6 +103,7 @@ function showTowns(Promise) {
             })
         },
         () => {
+        	reloadButton.style.display = 'block';
             loadingBlock.textContent = 'Не удалось загрузить города';
         })
 }

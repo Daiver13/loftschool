@@ -19,7 +19,7 @@ module.exports = {
         townss: './src/towns.js'
     },
     output: {
-        filename: '[name].[hash].js',
+        filename: '[hash].js',
         path: path.resolve('dist')
     },
     devtool: 'source-map',
@@ -44,6 +44,7 @@ module.exports = {
             template: 'towns.hbs',
             filename: 'towns.html',
             chunks: ['towns']
+
         }),
         new CleanWebpackPlugin(['dist'])
     ]

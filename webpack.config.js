@@ -19,7 +19,7 @@ module.exports = {
         cookie: './src/cookie.js'
     },
     output: {
-        filename: '[name].[hash].js',
+        filename: '[hash].js',
         path: path.resolve('dist')
     },
     devtool: 'source-map',

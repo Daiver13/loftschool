@@ -26,8 +26,7 @@
     "handlebars": "^4.0.6",
     "handlebars-loader": "^1.4.0",
     "html-webpack-plugin": "^2.26.0",
-    "style-loader": "^0.17.0",
-    "webpack": "^2.2.0"
+    "style-loader": "^0.17.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -44,6 +43,9 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.1",
     "mocha": "^3.2.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "webpack": "^2.7.0",
     "webpack-dev-server": "^2.4.5"
   }
 }

@@ -13,10 +13,17 @@ loaders.push({
     })
 });
 
+loaders.push({
+    test: /\.scss$/,
+    loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style-loader',
+        loader: ['css-loader', 'sass-loader']
+    })
+});
+
 module.exports = {
     entry: {
-        main: './src/index.js',
-        cookie: './src/cookie.js'
+        main: './src/root/js/index.js',
     },
     output: {
         filename: '[hash].js',
@@ -35,15 +42,9 @@ module.exports = {
         }),
         new ExtractTextPlugin('styles.css'),
         new HtmlPlugin({
-            title: 'Main Homework',
-            template: 'index.hbs',
+            title: 'Friends',
+            template: './src/template/index.hbs',
             chunks: ['main']
-        }),
-        new HtmlPlugin({
-            title: 'Div Drag And Drop',
-            template: 'cookie.hbs',
-            filename: 'cookie.html',
-            chunks: ['cookie']
         }),
         new CleanWebpackPlugin(['dist'])
     ]

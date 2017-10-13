@@ -17,7 +17,6 @@ function init() {
     });
 
     clusterer = new ymaps.Clusterer({
-        preset: 'twirl#invertedRedClusterIcons',
         groupByCoordinates: false,
         clusterBalloonContentLayout: 'cluster#balloonCarousel',
         clusterDisableClickZoom: true,

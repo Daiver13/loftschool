@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.container {
+    position: fixed;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.popup_title {
+    padding: 10px;
+    color: #fff;
+    background: #ff9a76;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.close_button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font: 1em Arial;
+}
+
+.comments {
+    padding: 5px;
+    height: 200px;
+    overflow-y: auto;
+    color: #111;
+}
+
+.review {
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #ff9a76;
+}
+
+.list__inputs {
+
+    input, textarea {
+        padding: 5px 10px 7px;
+        box-sizing: border-box;
+        margin: 5px;
+        width: 96%;
+        display: block;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        color: #111;
+        outline: none;
+    }
+
+    textarea {
+        min-height: 60px;
+        display: block;
+    }
+
+    [type="button"] {
+        width: 100px;
+        height: 30px;
+        float: right;
+        background: #ff9a76;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        color: #fff;
+    }
+}

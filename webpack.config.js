@@ -23,10 +23,10 @@ loaders.push({
 
 module.exports = {
     entry: {
-        main: './src/root/js/index.js',
+        main: './src/js/index.js',
     },
     output: {
-        filename: '[hash].js',
+        filename: '[chunkhash].js',
         path: path.resolve('dist')
     },
     devtool: 'source-map',
@@ -42,8 +42,8 @@ module.exports = {
         }),
         new ExtractTextPlugin('styles.css'),
         new HtmlPlugin({
-            title: 'Friends',
-            template: './src/template/index.hbs',
+            title: 'Yandex Map',
+            template: './src/index.hbs',
             chunks: ['main']
         }),
         new CleanWebpackPlugin(['dist'])
